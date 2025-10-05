@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Exam Test Project</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    /* Nav */
+    .navbar-custom {
+      background-color: rgba(1, 10, 44, 0.9);
+    }
+    .navbar-custom .nav-link, 
+    .navbar-custom .navbar-brand {
+      color: #fff;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+    .navbar-custom .nav-link:hover {
+      color: orange;
+    }
+    .search-box {
+      border-radius: 20px;
+      border: 1px solid orange;
+      padding: 5px 10px;
+      width: 250px;
+    }
+    .item-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .item {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 30%;
+      margin: 1rem;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+    .item:hover {
+      transform: scale(1.03);
+    }
+
+    h1 {
+      position: relative;
+      font-weight: 600;
+      color: #333;
+    }
+
+    h1::before {
+      content: '';
+      position: absolute;
+      left: 1;
+      bottom: 0;
+      height: 3px;
+      width: 28px;
+      border-radius: 12px;
+      background: rgba(1, 10, 44, 0.9);
+    }
+
+    #itemGrid button {
+      background-color: yellow;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      padding: 5px 12px;
+      margin: 5px;
+      transition: background-color 0.3s ease-in-out;
+    }
+    #itemGrid button:hover {
+      background-color: orange;
+    }
+    @media (max-width:768px){
+      .item { width:45%; }
+    }
+    @media (max-width:480px){
+      .item { width:90%; }
+    }
+
+    /* cart*/
+    #addtocart {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- nav -->
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="/duan/src/foldertrang/main/mainmenu.html">
+        <img src="https://t4.ftcdn.net/jpg/03/32/31/65/360_F_332316530_ofa4oQA3ZGWxd4tRLDqKuADfy2hnpWuU.jpg"
+             alt="Logo" style="width:50px;border-radius:15px;margin-right:10px;">
+        FinalShop
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:white;border-radius:3px;">=</span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cửa Hàng</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Săn Sale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sự Kiện</a></li>
+        </ul>
+
+        <form class="d-flex me-10">
+          <input class="form-control search-box" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+        </form>
+
+        <a class="btn btn-primary me-2" href="/duan/src/foldertrang/login/login.html">Đăng Nhập</a>
+        <a class="btn btn-warning" href="/duan/src/foldertrang/login/signup.html">Đăng Ký</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- sign up form-->
+  <div class="signupform">
+    <div style="padding-top: 50px;">
+      <div class="container border border-dark" style="text-align: center; font-weight: bold; border-radius: 20px; box-shadow: 10px 5px 5px; padding-top: 20px;">
+        <h1>Đăng Nhập</h1>
+        <form class="mt-4" action="#">
+          <h6 style="text-align: start;">Tên người dùng:</h6>
+          <input class="form-control mb-3" type="text" placeholder="Nhập tên người dùng" id="usernameLogin" required>
+
+          <h6 style="padding-top: 2rem; text-align: start;">Mật khẩu:</h6>
+          <input class="form-control mb-3" type="password" placeholder="Nhập mật khẩu" id="passwordLogin" required>
+
+          <!-- log thanh cong haoc that bai -->
+          <div class="mt-4 p-3 border rounded bg-light" id="logging"></div>
+
+          <div class="input-box button">
+            <input type="submit" value="Đăng Nhập" id="submitlogin" style="border-radius: 10px; border-color: rgba(1, 10, 44, 0.9); letter-spacing: 1px; background: #4070f4; color: white; padding:5px;">
+          </div>
+
+          <h6>Bạn chưa có tài khoản <a href="/duan/src/foldertrang/login/signup.html">Bấm vào đây để đăng ký</a></h6>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="signinform">
+    
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+  <script type="module" src="/duan/src/foldertrang/scripts/database.js"></script>
+  <script type="module" src="/duan/src/foldertrang/scripts/mainmenu.js"></script>
+  <script type="module" src="/duan/src/foldertrang/scripts/login.js"></script>
+</body>
+</html>
