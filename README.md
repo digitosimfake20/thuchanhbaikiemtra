@@ -19,4 +19,4 @@ Dự án áp dụng những công nghệ sau:
 - Javascript, localstorage database
 
 
-Em cảm ơn thầy hoặc bạn đã đọc đến đây, mìn rất vui :)
+idk what to say here
