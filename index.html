@@ -395,7 +395,7 @@
     <script>
       //pop up
       document.addEventListener("DOMContentLoaded", function () {
-        let showad = true;
+        let showad = !localStorage.getItem("iwouldliketooptoutofpopupadspleaseidontwanttosupportyousojustdontgivemeanyadsthankyou") || true;
         if (showad) {
           const myModal = new bootstrap.Modal(
             document.getElementById("adsModal")
