@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-
+// ignore this one idk man
 
 function hideall() {
     const forms = ['signupform', 'signinform'];
