@@ -108,6 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   logoutBtn.addEventListener("click", (e) => {
     e.preventDefault();
     localStorage.removeItem("currentUser");
-    window.location.href = "/duan/src/foldertrang/main/mainmenu.html";
+    window.location.href = "../index.html";
   });
 });
