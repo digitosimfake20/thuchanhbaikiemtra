@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const user = login(username, password);
     if (user) {
       localStorage.setItem("currentUser", JSON.stringify(user));
-      window.location.href = "/duan/src/foldertrang/main/mainmenu.html";
+      window.location.href = "../index.html";
     } else {
       logging.innerHTML = `<h5>Tên người dùng hoặc mật khẩu không đúng</h5>`;
     }
